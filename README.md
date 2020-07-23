@@ -1,0 +1,1 @@
+# AlphaFX_WordCounter
