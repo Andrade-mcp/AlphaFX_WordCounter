@@ -14,8 +14,6 @@ namespace AphaFX.WordCounter
         /// </summary>
         static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-
             // Display title as the C# word counter app
             Console.WriteLine("Alpha FX - Word Counter\r");
             Console.WriteLine("------------------------\n");
