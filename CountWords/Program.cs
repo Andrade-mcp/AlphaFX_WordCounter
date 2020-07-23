@@ -10,14 +10,13 @@ namespace AphaFX.WordCounter
         /// <summary>
         /// Date.......: 2020-07-23 
         /// Author.....: Anderson Andrade (andrade@mail.uk)
-        /// Project....: ATFX - Word Counter
+        /// Project....: Alpha - Word Counter
         /// </summary>
         static void Main(string[] args)
         {
             // Display title as the C# word counter app
-            Console.WriteLine("Alpha FX - Word Counter\r");
-            Console.WriteLine("------------------------\n");
-
+            Console.WriteLine("Alpha FX - Word Counter\n");
+            
             // Ask the user to continue
             Console.WriteLine("Press any key to continue...");            
 
@@ -69,35 +68,22 @@ namespace AphaFX.WordCounter
             var orderedStats = stats.OrderByDescending(x => x.Value);
             
             Console.Clear();
-            Console.WriteLine("Alpha FX - Word Counter");
-            Console.WriteLine(".------------------------\n");
-
+            
             // print total word count
-            Console.WriteLine(".------------------------.");
-            Console.WriteLine("\r| Total word count: {0} |", stats.Count);
-            Console.WriteLine(".------------------------.\n");
+            Console.WriteLine("\rTotal number of words: {0} \n", stats.Count);
 
             // states the number of top words to be show
-            Console.WriteLine("\r Top {0} word list: ", topWordList);
+            Console.WriteLine("\rTop {0} word list:\n", topWordList);
 
-            var col1 = "Word".PadLeft(5).PadRight(5);
-            var col2 = "Occurrence".PadLeft(5).PadRight(5);
-
-            Console.WriteLine("----------------------");
-            Console.WriteLine("| {0} | {1} |", col1, col2);
-            Console.WriteLine("----------------------");
+            Console.WriteLine("[Word]\t\t[Count]\n");
 
             // print occurrence of each top 10 word 
             foreach (var pair in orderedStats.Take(topWordList))
             {
-                var s1 = pair.Key.PadLeft(5).PadRight(5);
-                var s2 = pair.Value.ToString().PadLeft(10).PadRight(5);
-
-                Console.WriteLine("| {0} | {1} |", s1, s2);
-
+                Console.WriteLine(" {0} \t\t {1} ", pair.Key, pair.Value);
             }
 
-            Console.WriteLine("----------------------\n");
+            Console.ReadLine();
             Console.ReadLine();
         }
        
